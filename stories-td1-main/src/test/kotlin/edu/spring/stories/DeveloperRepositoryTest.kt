@@ -1,7 +1,7 @@
 package edu.spring.stories
 
-import edu.spring.stories.entities.Story
 import edu.spring.stories.entities.Developer
+import edu.spring.stories.entities.Story
 import edu.spring.stories.repositories.StoryRepository
 import edu.spring.stories.repositories.DeveloperRepository
 import org.assertj.core.api.Assertions
@@ -18,7 +18,7 @@ class DeveloperRepositoryTest {
     lateinit var storyRepository: StoryRepository
 
     private fun createDevWithStories():Developer{
-        var developer=Developer("John","DOE")
+        var developer= Developer("John","DOE")
         developer.id=1000
         developer.addStory(Story("Imprimer"))
         developer.addStory(Story("Se connecter"))

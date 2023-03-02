@@ -24,7 +24,7 @@ class TagRepositoryTest {
 
     @Test
     fun addToy(){
-        var tag=Tag("Red","Admin")
+        var tag= Tag("Red","Admin")
         tag=tagRepository.save(tag)
         assert(tagRepository.count()==1L)
         Assertions.assertThat(tag).hasFieldOrPropertyWithValue("label", "Admin")

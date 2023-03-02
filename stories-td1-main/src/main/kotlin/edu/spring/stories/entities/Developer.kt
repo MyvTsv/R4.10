@@ -1,4 +1,4 @@
-package edu.spring.stories.entites
+package edu.spring.stories.entities
 
 import jakarta.persistence.*
 
@@ -6,6 +6,17 @@ import jakarta.persistence.*
 @Table(name="developer")
 class Developer {
 
+    fun addStory(story: Story) {
+        if(stories.add(story)) {
+            story.developer = this
+        }
+    }
+
+    fun giveUpStory(story: List<Developer>) {
+        if(stories.remove(story)){
+            story.developer = null
+        }
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     open var id = 0
@@ -18,7 +29,7 @@ class Developer {
 
     @OneToMany
     @JoinColumn(name="idStory", nullable = false)
-    open lateinit var story:Story
+    open val stories= mutableSetOf<Story>()
 
     constructor(firstname: String, lastname: String) {
         this.lastname = lastname

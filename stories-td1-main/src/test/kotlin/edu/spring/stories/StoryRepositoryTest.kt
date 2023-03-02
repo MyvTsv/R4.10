@@ -1,7 +1,7 @@
 package edu.spring.stories
 
-import edu.spring.stories.entities.Story
 import edu.spring.stories.entities.Developer
+import edu.spring.stories.entities.Story
 import edu.spring.stories.repositories.StoryRepository
 import edu.spring.stories.repositories.DeveloperRepository
 import org.junit.jupiter.api.Test
@@ -25,7 +25,7 @@ class StoryRepositoryTest {
 
     @Test
     fun addDog(){
-        var story=Story("Imprimer")
+        var story= Story("Imprimer")
         story=storyRepository.save(story)
         assert(storyRepository.count()==1L)
         assert(story.name=="Imprimer")
@@ -44,7 +44,7 @@ class StoryRepositoryTest {
 
     @Test
     fun cannotAddDogWithUnsavedMaster(){
-        val developer=Developer("John","DOE")
+        val developer= Developer("John","DOE")
         var story=Story("Imprimer")
         story.developer=developer
         assertThrows<InvalidDataAccessApiUsageException> {

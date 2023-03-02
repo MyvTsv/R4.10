@@ -1,4 +1,4 @@
-package edu.spring.stories.entites
+package edu.spring.stories.entities
 
 import jakarta.persistence.*
 
@@ -15,10 +15,14 @@ class Story {
 
     @ManyToOne
     @JoinColumn(name="idDeveloper", nullable = false)
-    open lateinit var developer:Developer
+    open var developer:Developer? = null
 
     @ManyToMany
     @JoinColumn(name="tags", nullable = false)
-    open val tag= mutableSetOf<Tag>()
+    open val tags= mutableSetOf<Tag>()
+
+    constructor(name: String) {
+        this.name = name
+    }
 
 }
