@@ -9,5 +9,5 @@ interface DeveloperRepository: CrudRepository<Developer, Int> {
 
     fun findByStoriesName(name: String): List<Developer>
 
-    fun findByFirstnameAndLastname(prenom: String, nom: String): List<Developer>
+    fun findByFirstnameAndLastname(prenom: String, nom: String): Developer
 }

@@ -12,14 +12,14 @@ class Developer {
         }
     }
 
-    fun giveUpStory(story: List<Developer>) {
+    fun giveUpStory(story: Story) {
         if(stories.remove(story)){
             story.developer = null
         }
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    open var id = 0
+    open var id: Int = 0
 
     @Column(length = 255)
     open var firstname:String?=null
