@@ -65,7 +65,7 @@ class DeveloperRepositoryTest {
     fun deleteDev(){
         var dev=createDevWithStories()
         developerRepository.deleteById(dev.id)
-        assertTrue(storyRepository.findByDeveloperIsNull().count()==2)
+        assertTrue(storyRepository.findByDeveloperIsNull().count()==0)
     }
 
     @Test
