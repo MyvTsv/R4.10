@@ -1,3 +1,34 @@
 {{> main/header }}
 
+
+<h1 class="ui blue header">{{name}}</h1>
+
+<h1 class="ui white header">
+    Domaine(s)
+    <div class="ui label">
+        {{#domain}}
+            {{children.size}}
+        {{/domain}}
+    </div>
+</h1>
+
+<div class="ui segment">
+    <div class="ui four column stackable grid">
+        {{#domain}}
+        {{#children}}
+        <div class="column">
+            <h4>{{name}}
+            <div class="sub header">{{providers.size}} providers</div></h4>
+            <a class="item active" data-tab="first">{{complaints.size}} plaintes</a>
+            <div class="ui label">{{complaints.size}}</div>
+            <form action="domain/{{name}}" method="post">
+                <button value="name" name="name" class="ui button">Ouvrir</button>
+            </form>
+        </div>
+        {{/children}}
+        {{/domain}}
+    </div>
+</div>
+
+
 {{> main/footer }}
