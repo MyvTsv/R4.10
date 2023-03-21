@@ -4,6 +4,7 @@ import edu.spring.btp.entities.Domain
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.ModelMap
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 
@@ -38,6 +39,12 @@ class IndexController {
         modelMap["domain"] = domain
         modelMap["name"] = name
         return "domain"
+    }
+
+    @GetMapping("/complaints/{domain}")
+    fun showComplaint(@PathVariable domain: Domain, modelMap: ModelMap): String {
+        modelMap["domain"] = domain
+        return "complaints"
     }
 
 }

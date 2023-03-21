@@ -1,0 +1,30 @@
+{{> main/header }}
+
+
+<h1 class="ui blue header">{{name}}</h1>
+
+<h1 class="ui white header">
+  Plainte(s)
+  <div class="ui label">
+    {{#domain}}
+    {{complaints.size}}
+    {{/domain}}
+  </div>
+</h1>
+
+<a class="ui button" href="/">Retour</a>
+
+<div class="ui segment">
+  <div class="ui four column stackable grid">
+    {{#domain}}
+    {{#compalints}}
+    <div class="column">
+      <h4>{{title}}</h4>
+    </div>
+    {{/children}}
+    {{/domain}}
+  </div>
+</div>
+
+
+{{> main/footer }}
