@@ -41,10 +41,19 @@ class IndexController {
         return "domain"
     }
 
-    @GetMapping("/complaints/{domain}")
-    fun showComplaint(@PathVariable domain: Domain, modelMap: ModelMap): String {
-        modelMap["domain"] = domain
-        return "complaints"
+    @GetMapping("/complaint/{domain}")
+    fun showComplaint(@PathVariable domain: String, modelMap: ModelMap): String {
+        modelMap["name"] = domain
+        modelMap["domain"] = domainRepository.findByName(domain)
+        modelMap["complaints"] = domainRepository.findByName(domain).complaints
+        return "complaint"
     }
 
+    @GetMapping("/complaint/{domain}/new")
+    fun newComplaint(@PathVariable domain: String, modelMap: ModelMap): String {
+        modelMap["name"] = domain
+        modelMap["domain"] = domainRepository.findByName(domain)
+        modelMap["complaints"] = domainRepository.findByName(domain).complaints
+        return "forms/complaint"
+    }
 }

@@ -21,9 +21,7 @@
             <div class="sub header">{{providers.size}} providers</div></h4>
             <a class="item active" data-tab="first">{{complaints.size}} plaintes</a>
             <div class="ui label">{{complaints.size}}</div>
-            <form action="domain/{{name}}" method="post">
-                <button value="name" name="name" class="ui button">Ouvrir</button>
-            </form>
+                <a value="name" name="name" class="ui button" href="/domain/{{name}}">Ouvrir</a>
         </div>
         {{/children}}
         {{/domain}}

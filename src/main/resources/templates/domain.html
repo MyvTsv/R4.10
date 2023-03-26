@@ -21,13 +21,8 @@
     <div class="column">
       <h4>{{name}}
         <div class="sub header">{{providers.size}} providers</div></h4>
-      <form action="complaints/{{domain}}" method="get">
-        <button type="submit" value="domain" name="domain" class="ui button">{{complaints.size}} plaintes</button>
-      </form>
+        <a class="ui button" href="../complaint/{{domain.name}}">{{complaints.size}} plaintes</a>
       <div class="ui label">{{complaints.size}}</div>
-      <form action="domain/{{name}}" method="post">
-        <button type="submit" value="name" name="name" class="ui button">Ouvrir</button>
-      </form>
     </div>
     {{/children}}
     {{/domain}}

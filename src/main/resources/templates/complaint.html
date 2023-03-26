@@ -17,11 +17,12 @@
 <div class="ui segment">
   <div class="ui four column stackable grid">
     {{#domain}}
-    {{#compalints}}
+    {{#complaints}}
     <div class="column">
       <h4>{{title}}</h4>
+      <a class="ui button", href="/complaint/{{name}}/new">Ajouter plainte</a>
     </div>
-    {{/children}}
+    {{/complaints}}
     {{/domain}}
   </div>
 </div>
